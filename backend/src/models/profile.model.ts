@@ -41,9 +41,24 @@ const profileSchema = new Schema<ProfileDocument>({
         required: true,
         ref: "User"
     },
-    bio: { type: String },
-    profileImageUrl: { type: String },
-    phoneNo: { type: String },
+    bio: {
+        type: String,
+        default: "I'm new User.",
+        trim: true,
+        set: (s: string) => s || "I'm new User."
+    },
+    profileImageUrl: {
+        type: String,
+        default: "/public/default-profile.jpg",
+        trim: true,
+        set: (s: string) => s || "/public/default-profile.jpg",
+    },
+    phoneNo: {
+        type: String,
+        default: "",
+        trim: true,
+        match: [/^\d{10}$/, "Please use a valid phone number"],
+    },
     socialLinks: {
         type: socialLinksSchema,
         default: {}

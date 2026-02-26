@@ -1,8 +1,19 @@
-export type Role = "admin" | "blogger" | "reader";
+export enum Roles {
+    ADMIN = "admin",
+    BLOGGER = "blogger",
+    READER = "reader",
+}
 
+export enum BloggerStatus {
+    NONE = "none",
+    PENDING = "pending",
+    APPROVED = "approved",
+    REJECTED = "rejected",
+}
 export interface User {
     name: string;
     email: string;
     password: string;
-    role: Role;
+    role: Roles;
+    bloggerStatus: BloggerStatus;
 }

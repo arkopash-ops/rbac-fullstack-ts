@@ -1,7 +1,9 @@
 import { Document, model, Schema } from "mongoose";
-import { Role, User } from '../types/users.types';
+import { BloggerStatus, Roles, User } from '../types/users.types';
 
 export interface UserDocument extends User, Document { }
+
+
 
 const UserSchema = new Schema<UserDocument>({
     name: {
@@ -24,8 +26,13 @@ const UserSchema = new Schema<UserDocument>({
     },
     role: {
         type: String,
-        enum: ["admin", "blogger", "reader"] as Role[],
-        default: "reader",
+        enum: Object.values(Roles),
+        default: Roles.READER,
+    },
+    bloggerStatus: {
+        type: String,
+        enum: Object.values(BloggerStatus),
+        default: BloggerStatus.NONE,
     }
 }, { timestamps: true });
 

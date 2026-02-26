@@ -1,0 +1,72 @@
+# ===============================
+# Node / Backend
+# ===============================
+# Node dependencies
+backend/node_modules/
+node_modules/
+
+# Build / compiled output
+backend/dist/
+backend/build/
+*.tsbuildinfo
+
+# Environment files
+backend/.env
+backend/.env.*
+!.env.example
+
+# Logs
+backend/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime files
+backend/pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+backend/coverage/
+
+# ===============================
+# React / Frontend
+# ===============================
+# Node dependencies
+frontend/node_modules/
+
+# Build / compiled output
+frontend/build/
+frontend/dist/
+
+# Environment files
+frontend/.env
+frontend/.env.*
+!.env.example
+
+# Logs
+frontend/logs/
+*.log
+
+# Coverage
+frontend/coverage/
+
+# ===============================
+# General / OS / Editor
+# ===============================
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
